@@ -96,8 +96,19 @@
             }
         }
 
-        
-        
+        loadTasks();
+        function taskinput() {
+            const input = document.getElementById('task-inp')
+            const inputvalue = document.getElementById('task-inp').value
+            if (!inputvalue) {
+                alert('please enter value')
+                return;
+            }
+            todo.push(inputvalue)
+            loadTasks()
+            input.value = ''
+
+        }
 
     </script>
 </body>
