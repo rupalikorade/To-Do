@@ -74,7 +74,19 @@
             if (allTasks)
                 todo.push(...allTasks)
         }
-       
+        loadFromLocalStorage()
+
+        function loadTasks() {
+            localStorage.setItem('localtodo', JSON.stringify(todo))
+
+            display.innerHTML = '';
+            for (let to of todo) {
+                display.innerHTML += `
+                    <div class="todo-item">${to}
+                        <button class="btn" onclick="deleteTask('${to}')">delete Task</button>
+                    </div>`;
+            }
+        }
 
        
 
