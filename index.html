@@ -57,7 +57,7 @@
     <h1>Tasks</h1>
     <div class="main">
      <input type="text" id="task-inp" placeholder="Enter your task" class="inpit">
-     <button onclick="taskinput() "> add</button>
+     <button onclick="taskinput()"> add</button>
     </div>
      <div id="display" class="display"></div>
  
@@ -66,7 +66,14 @@
 
 
     <script>
-        
+        let todo = [];
+        let display = document.getElementById("display");
+
+        function loadFromLocalStorage() {
+            const allTasks = JSON.parse(localStorage.getItem('localtodo'))
+            if (allTasks)
+                todo.push(...allTasks)
+        }
        
 
        
