@@ -88,7 +88,13 @@
             }
         }
 
-       
+        function deleteTask(to) {
+            let taskIndex = todo.indexOf(to);
+            if (taskIndex > -1) {
+                todo.splice(taskIndex, 1);
+                loadTasks();
+            }
+        }
 
         
         
